@@ -1,0 +1,182 @@
+port 995
+proto tcp
+dev tun
+persist-key
+persist-tun
+keepalive 5 15
+topology subnet
+server 10.1.0.0 255.255.255.0
+push "dhcp-option DNS 94.140.14.14"
+push "dhcp-option DNS 94.140.15.15"
+push "redirect-gateway def1 bypass-dhcp"
+dh none
+ecdh-curve prime256v1
+auth SHA256
+cipher AES-128-GCM
+ncp-ciphers CHACHA20-POLY1305:AES-128-GCM
+tls-server
+tls-version-min 1.2
+tls-ciphersuites TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256
+tls-cipher TLS-ECDHE-ECDSA-WITH-AES-128-GCM-SHA256
+verb 1
+<ca>
+-----BEGIN CERTIFICATE-----
+MIIDPDCCAiSgAwIBAgIUB6rWgskYPS0gHugxom2zipJtgF8wDQYJKoZIhvcNAQEL
+BQAwETEPMA0GA1UEAwwGc2tyZXB5MB4XDTIzMDEyNDE5MTExN1oXDTMzMDEyMTE5
+MTExN1owETEPMA0GA1UEAwwGc2tyZXB5MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8A
+MIIBCgKCAQEAwawtzoO3NtT+pIfRdAMQSALNtaOsJuSom3Twf336nz9mjdBz7eBu
+rnjB9ZeAeZiZZj3H27e6y1+nbJ/SUijTlMue7FVFMMBaRuF6aCl2mXlwstgy5Ru+
+Lc7ZtLZ5sKGx/OZs7rYQZATAvuh4u5/X1II6fANxXNQWyvk3MLXbwb7/7L+rJdyY
+4HhO/8Z04avW1+sZxxhZ4I/VmfmvHZF+cTHqx18kEu9UALNpL0Dq4BBBvq0B0XSR
+MbASdly8gvejQHV+70vPHMt3tkfPUkySNiCHzslvolvfEDLH49pB3DTAkfwSFRP+
++tG3zn5hE4cOLGSj3hmiTtv4BbD7fzW4DQIDAQABo4GLMIGIMAwGA1UdEwQFMAMB
+Af8wHQYDVR0OBBYEFL4ApZMsBfEp1Hs20teBCNl/4ISKMEwGA1UdIwRFMEOAFL4A
+pZMsBfEp1Hs20teBCNl/4ISKoRWkEzARMQ8wDQYDVQQDDAZza3JlcHmCFAeq1oLJ
+GD0tIB7oMaJts4qSbYBfMAsGA1UdDwQEAwIBBjANBgkqhkiG9w0BAQsFAAOCAQEA
+OTzrmp8GwN2MHYN6DTLjBmTN8GwTFZNuRCbRp/tQ/EZ25Zw2hAdFQUEBCV9W6nPR
+1Z/bDYfjd3I8MgRVWo4fSY2lfccw7MP5/NviKSSx9pMiW+I/XCR8Fnx2wMhLGph4
+wXIQ2+IOcNZ6rqS+pt+PWGkipzbeOrJGEQSqRAp5oRU2hCAtK/uTNFRdpirEzcTV
+1KNsmbtfzQKfjmLtRHiI+ykpxwFLP3u8Z96DiabxvHPA9IfqCdyAeBBsJ7B3oMu2
+GrjonTBR/JAGjtV47pYHiihU+r+exno2aEe8KXoAuuDcJo7fYr4ajJPcTrmllCUa
+6bNWo97afPMOuMmdVjwRYA==
+-----END CERTIFICATE-----
+</ca>
+<cert>
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            38:89:de:d4:bd:6c:ec:fc:9f:8a:3e:a9:0e:4a:f4:66
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: CN=skrepy
+        Validity
+            Not Before: Jan 24 19:11:42 2023 GMT
+            Not After : Apr 28 19:11:42 2025 GMT
+        Subject: CN=skrepy
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:a3:7d:fe:5b:f0:18:ed:73:87:f7:f6:28:c4:9a:
+                    d8:8c:59:10:e4:8f:1c:64:0a:c5:81:4a:ba:a4:8b:
+                    40:2e:20:c6:78:83:f3:ca:aa:e4:8d:d1:5b:72:7f:
+                    3e:d2:01:75:0e:99:9f:ff:20:dc:f8:59:d1:a3:20:
+                    bf:d7:86:2f:a2:68:d6:c0:78:10:43:a1:04:1d:65:
+                    82:71:1d:81:22:11:2d:3a:3e:8d:0f:22:88:7d:7a:
+                    3a:98:21:a7:ef:0a:0a:f4:f3:17:02:e7:a2:fd:91:
+                    9f:b6:7e:10:a8:d6:7a:e4:19:dc:2b:91:d8:e1:dd:
+                    16:5e:37:47:00:9c:17:68:45:c7:25:d1:1e:20:4c:
+                    fd:7a:23:00:35:49:db:1b:f5:a1:eb:5c:4c:60:af:
+                    09:75:2d:29:55:08:a5:79:3f:dc:82:0e:ee:0b:04:
+                    63:0b:c0:1c:2e:cc:36:7f:f9:41:38:6e:43:ed:bc:
+                    79:78:4c:e8:8b:20:64:de:b6:fd:cd:cc:98:e0:e7:
+                    9e:ed:b7:c8:fd:9f:46:09:0f:d5:04:d1:91:57:7e:
+                    3b:03:a0:65:d8:60:45:bb:78:6f:ef:63:2c:22:1b:
+                    0c:b7:5b:33:66:68:53:1c:2c:21:ef:74:70:62:f8:
+                    a3:d9:44:b6:10:e0:eb:19:c7:61:35:17:b1:1d:b1:
+                    79:09
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints:
+                CA:FALSE
+            X509v3 Subject Key Identifier:
+                70:60:63:A2:BF:58:4D:D8:95:DD:65:70:65:1C:E0:D7:3F:53:CB:23
+            X509v3 Authority Key Identifier:
+                keyid:BE:00:A5:93:2C:05:F1:29:D4:7B:36:D2:D7:81:08:D9:7F:E0:84:8A
+                DirName:/CN=skrepy
+                serial:07:AA:D6:82:C9:18:3D:2D:20:1E:E8:31:A2:6D:B3:8A:92:6D:80:5F
+            X509v3 Extended Key Usage:
+                TLS Web Server Authentication
+            X509v3 Key Usage:
+                Digital Signature, Key Encipherment
+            X509v3 Subject Alternative Name:
+                DNS:skrepy
+    Signature Algorithm: sha256WithRSAEncryption
+    Signature Value:
+        9c:60:5b:41:44:01:54:90:fe:94:84:5e:48:45:51:80:67:d1:
+        44:82:d3:d1:f7:45:c9:50:ca:25:ca:fb:9f:22:a2:06:90:51:
+        f1:97:78:86:a3:1a:de:a2:6a:15:b9:5f:f7:4a:b8:6a:1e:ae:
+        7c:f9:c9:3d:90:b6:d5:a7:6b:4d:b5:71:00:58:62:c2:27:8d:
+        a1:37:ee:85:35:77:e4:8f:7e:76:cd:30:56:ae:64:14:f3:1b:
+        73:3a:e2:ca:dc:5c:0f:58:40:12:4e:b9:56:d9:89:b0:48:37:
+        c9:c4:87:81:dd:de:1d:cd:eb:f1:02:54:b0:f8:a3:37:4b:95:
+        a1:1a:9f:01:44:bc:73:50:65:37:a3:b3:87:8c:19:d2:44:f0:
+        14:cb:c8:11:75:7f:20:05:8a:60:69:02:bc:75:6c:2a:c9:32:
+        a1:23:39:f0:d5:ac:83:ad:b6:75:01:ab:09:80:eb:67:f7:0b:
+        cc:71:46:a0:63:eb:59:5e:8e:41:4b:c6:e5:05:af:8f:36:45:
+        12:55:0c:d7:51:8d:d6:aa:e2:a5:ab:9b:64:24:c7:26:4d:3d:
+        8d:74:ce:99:02:b6:73:70:43:41:a3:77:46:ab:ca:9f:da:52:
+        7c:3a:e6:fb:a2:05:5a:c3:84:11:94:c9:37:b9:2a:5c:7b:2e:
+        86:95:00:bd
+-----BEGIN CERTIFICATE-----
+MIIDXTCCAkWgAwIBAgIQOIne1L1s7Pyfij6pDkr0ZjANBgkqhkiG9w0BAQsFADAR
+MQ8wDQYDVQQDDAZza3JlcHkwHhcNMjMwMTI0MTkxMTQyWhcNMjUwNDI4MTkxMTQy
+WjARMQ8wDQYDVQQDDAZza3JlcHkwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK
+AoIBAQCjff5b8Bjtc4f39ijEmtiMWRDkjxxkCsWBSrqki0AuIMZ4g/PKquSN0Vty
+fz7SAXUOmZ//INz4WdGjIL/Xhi+iaNbAeBBDoQQdZYJxHYEiES06Po0PIoh9ejqY
+IafvCgr08xcC56L9kZ+2fhCo1nrkGdwrkdjh3RZeN0cAnBdoRccl0R4gTP16IwA1
+Sdsb9aHrXExgrwl1LSlVCKV5P9yCDu4LBGMLwBwuzDZ/+UE4bkPtvHl4TOiLIGTe
+tv3NzJjg557tt8j9n0YJD9UE0ZFXfjsDoGXYYEW7eG/vYywiGwy3WzNmaFMcLCHv
+dHBi+KPZRLYQ4OsZx2E1F7EdsXkJAgMBAAGjgbAwga0wCQYDVR0TBAIwADAdBgNV
+HQ4EFgQUcGBjor9YTdiV3WVwZRzg1z9TyyMwTAYDVR0jBEUwQ4AUvgClkywF8SnU
+ezbS14EI2X/ghIqhFaQTMBExDzANBgNVBAMMBnNrcmVweYIUB6rWgskYPS0gHugx
+om2zipJtgF8wEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgWgMBEGA1Ud
+EQQKMAiCBnNrcmVweTANBgkqhkiG9w0BAQsFAAOCAQEAnGBbQUQBVJD+lIReSEVR
+gGfRRILT0fdFyVDKJcr7nyKiBpBR8Zd4hqMa3qJqFblf90q4ah6ufPnJPZC21adr
+TbVxAFhiwieNoTfuhTV35I9+ds0wVq5kFPMbczriytxcD1hAEk65VtmJsEg3ycSH
+gd3eHc3r8QJUsPijN0uVoRqfAUS8c1BlN6Ozh4wZ0kTwFMvIEXV/IAWKYGkCvHVs
+KskyoSM58NWsg622dQGrCYDrZ/cLzHFGoGPrWV6OQUvG5QWvjzZFElUM11GN1qri
+paubZCTHJk09jXTOmQK2c3BDQaN3RqvKn9pSfDrm+6IFWsOEEZTJN7kqXHsuhpUA
+vQ==
+-----END CERTIFICATE-----
+</cert>
+<key>
+-----BEGIN PRIVATE KEY-----
+MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCjff5b8Bjtc4f3
+9ijEmtiMWRDkjxxkCsWBSrqki0AuIMZ4g/PKquSN0Vtyfz7SAXUOmZ//INz4WdGj
+IL/Xhi+iaNbAeBBDoQQdZYJxHYEiES06Po0PIoh9ejqYIafvCgr08xcC56L9kZ+2
+fhCo1nrkGdwrkdjh3RZeN0cAnBdoRccl0R4gTP16IwA1Sdsb9aHrXExgrwl1LSlV
+CKV5P9yCDu4LBGMLwBwuzDZ/+UE4bkPtvHl4TOiLIGTetv3NzJjg557tt8j9n0YJ
+D9UE0ZFXfjsDoGXYYEW7eG/vYywiGwy3WzNmaFMcLCHvdHBi+KPZRLYQ4OsZx2E1
+F7EdsXkJAgMBAAECggEAAVvdkLBIeXvalnnx25J3/hCiFOyZTr3Uc0aJhl1yj/Pz
+SORHUxvVX1YbpYmK+2stF1LzmOnSH/w2lOk3+eHmvvPvWHVRMGFBEDSqwjjJQsW/
+jEe48wHeITs4ACMbSutYp2BPlgm1U9hXKmAQofkoYxi6YbeBc2Xbuc2yZ2a7/sw+
+ctYHthrSMmDhYlCbFSUF/lrpZ/cVsaGKazN80NuaUOx61nxILErZ9LDjGO5OxzDZ
+0ATYnddomi73PhJ1XvTc6lOPyAvHNbDAGDdyOKxkXdjYRO4bTb1muNM4cQV8jpH1
+1IQWjmWZiPDrs5PUkFuZP7RE11+wkybUkEo/rnZVwQKBgQDCDuN5d7iqlU/E9qKP
+aVFtWiOp7C7M0xsGzfr1sFAM5FOvDN/qIslOAA2E2l3rXRW9dJOjMvaQXiQIGUEp
+Pt0l0jjMjQ/BXx6hGzFB+n/avgdKTDeettkQNz1DntLf3EBxyZEtWlzHHgp+BK39
+gDF8nnjKTtZjuroOwsxiBs4BKQKBgQDXrXW+fJmF0yzfyN//bslPvotCoFzka9PW
+1SglpstvG7p7dG+CU/2OjiOdXPQ+sIyS7MOUAv6HBgqoJHu4nPexDGL0cXZQ6HJp
+MXaWqJMAEiki1ROJoAb52dZSmbjW7tMqF25zUwjrU3FfqgKHbw32lVWEoyAY5NEF
+UDD7a1lU4QKBgCfuAlZjEQdgk7pWeVqC9DNJAd+b7oFMytnallHphn8wmBuDzasS
+n1NCZYW5nOuqCqgiDaLeAKfyBv33nFXNTpnSqMdGG0DRvq6ttrP5xEcRJNTf2+33
+d7CDfUKlsoRHgKcpL4sidcau4r/NXLO1pfkbboVKNYjtygzxfjaJaegJAoGBAI1N
+dtvjFE4qKbdACwl10uytAN4Y5GM/Bd41bwUj/xp/RzEE+t2fG3sfQtQhh1/fGWpV
+NlmtkIZz/d1lca1lIZ5caCSQhZzCfdrPbkuMjCq6uzq38QH01z0wbAtX7VLby3tD
+OLjTyP8sfxXW86s5piNMeWfZ2/iTSSI7BKxkC3XhAoGBAJX4uADFEyt1kjAGrMk0
+HBv+E6xj3xDwvEGoo6JPL9pTt0VycnXQ8MQgPvj+lAZdhADziG9DqvkjnfolxFca
+EIkSxkJEf8QgZ7a8COVFhqCiubLvds7ZMdEye3EpZaG2/L/HZPL5QFxBtwZFNyNc
+9w2wIe82gsL11slLwF63wLNc
+-----END PRIVATE KEY-----
+</key>
+<tls-crypt>
+-----BEGIN OpenVPN Static key V1-----
+00896ae67191ddac7d8b96f77597a5ed
+80a625502c1044ff886058aeac9d02bd
+45bad419d80a5495a3fe634a43825241
+29b45ec3edadaa08a88fb2ebd7b79a60
+d2fdfd3d39cb13c7453e2b2723199368
+776218b1481c2f8ef73556c3b465f38a
+3182ee802a7daf273bbda5a9bfb0344b
+7e1a69a17ecbde399d57581d0548ec62
+27ac3439753da4bbd427355ef1b916ef
+77ef952efd6757aa794934b8b7d35994
+eb055cc9b33db633be41f8ae2e370c5a
+7c156460cd7b9071af31708a861bcd55
+eaaef1c7d3fd56e31d64139eea9465ec
+7d49adfe7fdde6ad8beb73d5424d0d46
+971fd1f11c86ac29193e604c5453a53c
+2c5e22f32ce520e56a5fe2ad7a9d8030
+-----END OpenVPN Static key V1-----
+</tls-crypt>
